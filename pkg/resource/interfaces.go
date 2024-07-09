@@ -80,6 +80,11 @@ type Orphanable interface {
 	GetDeletionPolicy() xpv1.DeletionPolicy
 }
 
+type CustomReconciliation interface {
+	SetReconciliationPolicy(p *xpv1.ReconciliationPolicy)
+	GetReconciliationPolicy() *xpv1.ReconciliationPolicy
+}
+
 // A ProviderConfigReferencer may reference a provider config resource.
 type ProviderConfigReferencer interface {
 	GetProviderConfigReference() *xpv1.Reference
@@ -198,6 +203,7 @@ type Managed interface { //nolint:interfacebloat // This interface has to be big
 	ConnectionDetailsPublisherTo
 	Manageable
 	Orphanable
+	CustomReconciliation
 
 	Conditioned
 }

@@ -118,3 +118,7 @@ const (
 	// execution could continue even if the reference cannot be resolved.
 	ResolutionPolicyOptional ResolutionPolicy = "Optional"
 )
+
+type ReconciliationPolicy struct {
+	PollInterval string `json:"pollInterval,omitempty"`
+}

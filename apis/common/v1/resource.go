@@ -221,6 +221,9 @@ type ResourceSpec struct {
 	// +optional
 	// +kubebuilder:default=Delete
 	DeletionPolicy DeletionPolicy `json:"deletionPolicy,omitempty"`
+
+	// +optional
+	ReconciliationPolicy *ReconciliationPolicy `json:"reconciliationPolicy,omitempty"`
 }
 
 // ResourceStatus represents the observed state of a managed resource.
